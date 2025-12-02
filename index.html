@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ideas Become Impact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState } = React;
+
+    const workshopImages = [
+      "./workshop_images/mmexport1761180888871.jpg",
+      "./workshop_images/_MG_9415.JPG",
+      "./workshop_images/20251022_174505.jpg",
+    ];
+
+    const workshopCards = [
+      {
+        title: "Heart-Rate Detection",
+        description: "Students use basic hardware sensors to measure and visualize their heart rate, discovering how technology converts biological signals into data. This workshop introduces concepts like signal processing, noise reduction, and how AI models can support real-time health insights.",
+        image: "./workshop_images/mmexport1761180888871.jpg",
+      },
+      {
+        title: "Trash vs. Nature Image Detection",
+        description: "In this introductory workshop, students train a simple computer vision model to distinguish between trash and natural scenery. Along the way, they learn why data diversity and representation matter, how bias affects model performance, and how AI can be used for environmental impact.",
+        image: "./workshop_images/20251022_174505.jpg",
+      },
+      {
+        title: "Prosthetic Grip Prediction",
+        description: "In this hands-on, model-focused workshop, students explore how AI interprets muscle-signal patterns to predict different prosthetic hand grips. They compare multiple machine-learning models, learn how model choice affects accuracy, and see how data-driven design can improve assistive technologies.",
+        image: "./workshop_images/_MG_9415.JPG",
+      },
+    ];
+
+    const sliderImages = [
+      "./workshop_images/mmexport1761180888871.jpg",
+      "./workshop_images/_MG_9415.JPG",
+      "./workshop_images/20251022_174505.jpg",
+    ];
+
+    const sections = [
+      {
+        id: "home",
+        title: "Home",
+        content: (
+          <>
+            <header className="hero">
+              <div>
+                <p className="eyebrow">Ideas Become Impact</p>
+                <h1>Where ideas grow into real movements.</h1>
+                <p className="lede">IBI’s mission is to inspire creativity, confidence, and create opportunities for the next generation by making STEM and AI education engaging, inclusive, and within reach for every student. When young people understand and create with technology, they unlock the power to change their communities and the world. We deliver accessible, hands-on STEM and AI learning experiences that demystify advanced tools, spark curiosity, and equip students with the skills to turn their ideas into real-world impact.</p>
+                <div className="cta-row">
+                  <a className="btn primary" href="#contact">Talk to us</a>
+                  <a className="btn ghost" href="#get-involved">Get involved</a>
+                </div>
+              </div>
+              <div className="card stack">
+                <span className="badge">Workshops</span>
+                <div className="grid thumbs">
+                  {workshopImages.map((src, idx) => (
+                    <div
+                      key={src + idx}
+                      className="thumb photo"
+                      style={{ backgroundImage: `url(${src})` }}
+                    ></div>
+                  ))}
+                </div>
+              </div>
+            </header>
+
+
+            <section className="panel">
+              <h2>In the News</h2> 
+              <p>Find our work/examples of similar work from our founders in the news.</p>
+              <div className="logo-row">
+                <a className="logo" href="https://www.smithsonianmag.com/innovation/12-year-old-girl-built-robot-can-find-microplastics-ocean-180970607/" target="_blank" rel="noreferrer">Smithsonian</a>
+                <a className="logo" href="https://www.goodmorningamerica.com/video/98095186/" target="_blank" rel="noreferrer">Good Morning America</a>
+                <a className="logo" href="https://www.npr.org/" target="_blank" rel="noreferrer">sdggased</a>
+                <a className="logo" href="https://www.nbc.com/" target="_blank" rel="noreferrer">NfeaggggaBC</a>
+              </div>
+            </section>
+          </>
+        ),
+      },
+      {
+        id: "get-involved",
+        title: "Get Involved",
+        content: (
+          <>
+            <section className="panel">
+              <h2>Create a Chapter</h2>
+              <div className="card highlight">
+                <p>Joining IBI as a chapter means:</p>
+                <ul>
+                  
+                  <li>Building a student-led club focused on STEM and AI learning.</li>
+                  <li>Working on long-term projects (weeks to semester-long) with real-world impact—such as food-drive matching tools, environmental monitoring, or medical image tumor detection.</li>
+                  <li>Hosting IBI workshops for local youth once your chapter develops enough expertise.</li>
+                  <li>Joining a network of chapters sharing ideas, resources, and mentorship.</li>
+                  <li>Making a lasting impact in your community through technology-driven initiatives.</li>
+                </ul>
+                <p>Contact us to get started and bring IBI to your school or community.</p>
+              </div>
+            </section>
+
+            <section className="panel">
+              <h2>Workshops Available</h2>
+              <div className="grid cards">
+                {workshopCards.map((workshop) => (
+                  <WorkshopCard key={workshop.title} workshop={workshop} images={sliderImages} />
+                ))}
+              </div>
+            </section>
+
+          </>
+        ),
+      },
+      {
+        id: "about",
+        title: "About",
+        content: (
+          <>
+            <section className="panel">
+              <h2>Who Are We</h2>
+              <div className="grid cards founders">
+                <article className="card">
+                  <div
+                    className="avatar photo"
+                    style={{ backgroundImage: "url(./bio_images/Anna_headshot.jpg)" }}
+                  ></div>
+                  <h3>Anna Du</h3>
+                  <p>Anna Du is a student engineer and cofounder of IBI, bringing her experience in AI, robotics, and research to create interactive workshops that make advanced technology approachable for everyone. She focuses on developing scalable, high-impact learning programs that empower young people to innovate in their own communities.</p>
+                </article>
+                <article className="card">
+                  <div className="avatar"></div>
+                  <h3>Yunzhu Chen</h3>
+                  <p>Co-founder leading AI curriculum design and educator training.</p>
+                </article>
+                <article className="card">
+                  <div className="avatar"></div>
+                  <h3>Ramzey Burdette</h3>
+                  <p>Co-founder driving community partnerships and program delivery.</p>
+                </article>
+              </div>
+            </section>
+
+          </>
+        ),
+      },
+      {
+        id: "contact",
+        title: "Contact",
+        content: (
+          <>
+            <section className="panel">
+              <h2>Contact Us</h2>
+              <p>Want to start a chapter, host a workshop, or ask us questions? Send us an email.</p>
+              <form
+                className="card form"
+                onSubmit={handleMailto}
+              >
+                <label>
+                  Name
+                  <input name="name" type="text" placeholder="Your name" />
+                </label>
+                <label>
+                  Email
+                  <input name="email" type="email" placeholder="you@example.com" />
+                </label>
+                <label>
+                  Subject
+                  <input name="subject" type="text" placeholder="Contact from website" />
+                </label>
+                <label>
+                  Message
+                  <textarea name="message" rows="4" placeholder="How can we help?"></textarea>
+                </label>
+                <button type="submit" className="btn primary">Send</button>
+              </form>
+            </section>
+          </>
+        ),
+      },
+    ];
+
+    function Nav() {
+      return (
+        <nav className="nav">
+          <div className="brand">
+            <img src="./logo.png" alt="Ideas Become Impact logo" />
+          </div>
+          <div className="links">
+            {sections.map((section) => (
+              <a key={section.id} href={`#${section.id}`}>{section.title}</a>
+            ))}
+          </div>
+        </nav>
+      );
+    }
+
+    function handleMailto(event) {
+      event.preventDefault();
+      const form = event.target;
+      const formData = new FormData(form);
+
+      const name = formData.get("name") || "Anonymous";
+      const email = formData.get("email") || "";
+      const subject = formData.get("subject") || "Contact from website";
+      const message = formData.get("message") || "";
+
+      const bodyLines = [
+        `From: ${name}`,
+        email ? `Email: ${email}` : "",
+        "",
+        message,
+      ].filter(Boolean).join("\n");
+
+      const mailto = `mailto:contact@ideasbecomeimpact.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines)}`;
+      window.location.href = mailto;
+    }
+
+    function WorkshopCard({ workshop, images }) {
+      const [index, setIndex] = useState(0);
+      const total = images.length;
+
+      const next = () => setIndex((prev) => (prev + 1) % total);
+      const prev = () => setIndex((prev) => (prev - 1 + total) % total);
+
+      const currentImage = images[index];
+
+      return (
+        <article className="card workshop-card">
+          <div className="workshop-image" style={{ backgroundImage: `linear-gradient(120deg, rgba(18, 48, 38, 0.35), rgba(2, 37, 15, 0.1)), url(${currentImage})` }} role="img" aria-label={`${workshop.title} image ${index + 1} of ${total}`}>
+            <button type="button" className="slide-btn prev" onClick={prev} aria-label="Previous workshop image">‹</button>
+            <button type="button" className="slide-btn next" onClick={next} aria-label="Next workshop image">›</button>
+          </div>
+          <div className="workshop-copy">
+            <h3>{workshop.title}</h3>
+            <p>{workshop.description}</p>
+          </div>
+        </article>
+      );
+    }
+
+    function App() {
+      return (
+        <div className="page">
+          <Nav />
+          <main>
+            {sections.map((section) => (
+              <section key={section.id} id={section.id} className="section">
+                <div className="section-header">
+                  <p className="eyebrow">{section.title}</p>
+                  <h2>{section.title}</h2>
+                </div>
+                {section.content}
+              </section>
+            ))}
+          </main>
+          <footer className="footer">
+            <p>Ideas Become Impact — made with React (CDN).</p>
+          </footer>
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</body>
+</html>
