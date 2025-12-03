@@ -20,33 +20,42 @@
     const { useState } = React;
 
     const workshopImages = [
-      "./workshop_images/heartrate_workshop/mmexport1761180888871.jpg",
-      "./workshop_images/heartrate_workshop/_MG_9415.JPG",
+      "./workshop_images/trash_vs_nature_workshop/mmexport1761180888871.jpg",
+      "./workshop_images/prosthetic_workshop/_MG_9415.JPG",
       "./workshop_images/heartrate_workshop/20251022_174505.jpg",
     ];
+
+    const workshopMedia = {
+      heartrate_workshop: [
+        "./workshop_images/heartrate_workshop/20251022_174505.jpg",
+      ],
+      trash_vs_nature_workshop: [
+        "./workshop_images/trash_vs_nature_workshop/mmexport1761180888871.jpg",
+      ],
+      prosthetic_workshop: [
+        "./workshop_images/prosthetic_workshop/_MG_9415.JPG",
+      ],
+    };
 
     const workshopCards = [
       {
         title: "Heart-Rate Detection",
         description: "Students use basic hardware sensors to measure and visualize their heart rate, discovering how technology converts biological signals into data. This workshop introduces concepts like signal processing, noise reduction, and how AI models can support real-time health insights.",
-        image: "./workshop_images/mmexport1761180888871.jpg",
+        image: "./workshop_images/heartrate_workshop/20251022_174505.jpg",
+        slug: "heartrate_workshop",
       },
       {
         title: "Trash vs. Nature Image Detection",
         description: "In this introductory workshop, students train a simple computer vision model to distinguish between trash and natural scenery. Along the way, they learn why data diversity and representation matter, how bias affects model performance, and how AI can be used for environmental impact.",
-        image: "./workshop_images/20251022_174505.jpg",
+        image: "./workshop_images/trash_vs_nature_workshop/mmexport1761180888871.jpg",
+        slug: "trash_vs_nature_workshop",
       },
       {
         title: "Prosthetic Grip Prediction",
         description: "In this hands-on, model-focused workshop, students explore how AI interprets muscle-signal patterns to predict different prosthetic hand grips. They compare multiple machine-learning models, learn how model choice affects accuracy, and see how data-driven design can improve assistive technologies.",
-        image: "./workshop_images/_MG_9415.JPG",
+        image: "./workshop_images/prosthetic_workshop/_MG_9415.JPG",
+        slug: "prosthetic_workshop",
       },
-    ];
-
-    const sliderImages = [
-      "./workshop_images/mmexport1761180888871.jpg",
-      "./workshop_images/_MG_9415.JPG",
-      "./workshop_images/20251022_174505.jpg",
     ];
 
     const sections = [
@@ -86,7 +95,7 @@
               <div className="logo-row">
                 <a className="logo" href="https://www.smithsonianmag.com/innovation/12-year-old-girl-built-robot-can-find-microplastics-ocean-180970607/" target="_blank" rel="noreferrer">Smithsonian</a>
                 <a className="logo" href="https://www.goodmorningamerica.com/video/98095186/" target="_blank" rel="noreferrer">Good Morning America</a>
-                <a className="logo" href="https://www.npr.org/" target="_blank" rel="noreferrer">Olin College</a>
+                <a className="logo" href="https://www.olin.edu/articles/" target="_blank" rel="noreferrer">Olin College</a>
               </div>
             </section>
           </>
@@ -117,7 +126,11 @@
               <h2>Workshops Available</h2>
               <div className="grid cards">
                 {workshopCards.map((workshop) => (
-                  <WorkshopCard key={workshop.title} workshop={workshop} images={sliderImages} />
+                  <WorkshopCard
+                    key={workshop.title}
+                    workshop={workshop}
+                    images={workshopMedia[workshop.slug]}
+                  />
                 ))}
               </div>
             </section>
