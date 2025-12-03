@@ -252,8 +252,8 @@ a {
 
 .btn.ghost {
   background: transparent;
-  color: var(--text);
-  border-color: #cfe3d6;
+  color:#a1ffbd;
+  border-color: #000000;
 }
 
 .grid {

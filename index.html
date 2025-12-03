@@ -19,21 +19,28 @@
   <script type="text/babel">
     const { useState } = React;
 
-    const workshopImages = [
-      "./workshop_images/trash_vs_nature_workshop/mmexport1761180888871.jpg",
-      "./workshop_images/prosthetic_workshop/_MG_9415.JPG",
-      "./workshop_images/heartrate_workshop/20251022_174505.jpg",
+    const eventImages = [
+      "./event_images/IMG_5834.jpg",
+      "./event_images/IMG_5846.jpg",
+      "./event_images/IMG_5867.jpg",
+      "./event_images/IMG_5871.jpg",
+      "./event_images/IMG_5877.jpg",
+      "./event_images/IMG_5890.jpg",
+      "./event_images/20251022_174505.jpg",
+      "./event_images/_MG_9415.JPG",
+      "./event_images/mmexport1761180888871.jpg",
     ];
 
     const workshopMedia = {
       heartrate_workshop: [
+        "./workshop_images/heartrate_workshop/_MG_9415.JPG",
         "./workshop_images/heartrate_workshop/20251022_174505.jpg",
+        "./workshop_images/heartrate_workshop/mmexport1761180888871.jpg",
       ],
       trash_vs_nature_workshop: [
-        "./workshop_images/trash_vs_nature_workshop/mmexport1761180888871.jpg",
-      ],
-      prosthetic_workshop: [
-        "./workshop_images/prosthetic_workshop/_MG_9415.JPG",
+        "./workshop_images/trash_vs_nature_workshop/IMG_5834.jpg",
+        "./workshop_images/trash_vs_nature_workshop/IMG_5871.jpg",
+        "./workshop_images/trash_vs_nature_workshop/IMG_5890.jpg",
       ],
     };
 
@@ -41,20 +48,14 @@
       {
         title: "Heart-Rate Detection",
         description: "Students use basic hardware sensors to measure and visualize their heart rate, discovering how technology converts biological signals into data. This workshop introduces concepts like signal processing, noise reduction, and how AI models can support real-time health insights.",
-        image: "./workshop_images/heartrate_workshop/20251022_174505.jpg",
+        image: "./workshop_images/heartrate_workshop/_MG_9415.JPG",
         slug: "heartrate_workshop",
       },
       {
         title: "Trash vs. Nature Image Detection",
         description: "In this introductory workshop, students train a simple computer vision model to distinguish between trash and natural scenery. Along the way, they learn why data diversity and representation matter, how bias affects model performance, and how AI can be used for environmental impact.",
-        image: "./workshop_images/trash_vs_nature_workshop/mmexport1761180888871.jpg",
+        image: "./workshop_images/trash_vs_nature_workshop/IMG_5834.jpg",
         slug: "trash_vs_nature_workshop",
-      },
-      {
-        title: "Prosthetic Grip Prediction",
-        description: "In this hands-on, model-focused workshop, students explore how AI interprets muscle-signal patterns to predict different prosthetic hand grips. They compare multiple machine-learning models, learn how model choice affects accuracy, and see how data-driven design can improve assistive technologies.",
-        image: "./workshop_images/prosthetic_workshop/_MG_9415.JPG",
-        slug: "prosthetic_workshop",
       },
     ];
 
@@ -71,13 +72,13 @@
                 <p className="lede">IBI’s mission is to inspire creativity, confidence, and create opportunities for the next generation by making STEM and AI education engaging, inclusive, and within reach for every student. When young people understand and create with technology, they unlock the power to change their communities and the world. We deliver accessible, hands-on STEM and AI learning experiences that demystify advanced tools, spark curiosity, and equip students with the skills to turn their ideas into real-world impact.</p>
                 <div className="cta-row">
                   <a className="btn primary" href="#contact">Talk to us</a>
-                  <a className="btn ghost" href="#get-involved">Get involved</a>
+                  <a className="btn primary" href="#get-involved">Get involved</a>
                 </div>
               </div>
               <div className="card stack">
-                <span className="badge">Workshops</span>
+                <span className="badge">Events</span>
                 <div className="grid thumbs">
-                  {workshopImages.map((src, idx) => (
+                  {eventImages.map((src, idx) => (
                     <div
                       key={src + idx}
                       className="thumb photo"
@@ -123,7 +124,7 @@
             </section>
 
             <section className="panel">
-              <h2>Workshops Available</h2>
+              <h2>Workshop Examples</h2>
               <div className="grid cards">
                 {workshopCards.map((workshop) => (
                   <WorkshopCard
@@ -152,7 +153,7 @@
                     style={{ backgroundImage: "url(./bio_images/Anna_headshot.jpg)" }}
                   ></div>
                   <h3>Anna Du</h3>
-                  <p>Anna brings her experience in AI, robotics, and research to create interactive workshops that make advanced technology approachable for everyone. She focuses on developing scalable, high-impact learning programs that empower young people to innovate in their own communities.</p>
+                  <p>As a co-founder, Anna brings her experience in AI, robotics, and research to create interactive workshops that make advanced technology approachable for everyone. She focuses on developing scalable, high-impact learning programs that empower young people to innovate in their own communities.</p>
                 </article>
                 <article className="card">
                   <div
